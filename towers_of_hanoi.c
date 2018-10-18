@@ -8,7 +8,7 @@
 // A structure to represent a stack 
 struct Stack 
 { 
-	char label;
+    char label;
     int top; 
     unsigned capacity; 
     int* array; 
