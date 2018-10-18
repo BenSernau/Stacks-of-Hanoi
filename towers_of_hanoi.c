@@ -70,6 +70,14 @@ int peek(struct Stack* stack)
 	return stack->array[stack->top];
 }
 
+void initPuzzle(int plateNumber)
+{
+    for (int i = 1; i < plateNumber + 1; i++)
+    {
+        push(stackLeft, i);
+    }
+}
+
 void solve(int n, struct Stack* from, struct Stack* to, struct Stack* other)
 {
 	if(n == 1)
@@ -96,10 +104,7 @@ int main()
 
     int diskNum = 7;
 
-    for (int i = 1; i < diskNum + 1; i++)
-    {
-    	push(stackLeft, i);
-    }
+    
 
   	solve(diskNum, stackLeft, stackRight, stackMiddle);
 
