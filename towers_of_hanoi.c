@@ -13,7 +13,7 @@ struct Stack
     unsigned capacity; 
     int* array; 
 }; 
-  
+
 // function to create a stack of given capacity. It initializes size of 
 // stack as 0 
 struct Stack* createStack(unsigned capacity, char label) 
@@ -25,6 +25,10 @@ struct Stack* createStack(unsigned capacity, char label)
     stack->label = label;
     return stack; 
 } 
+
+struct Stack* stackLeft = createStack(100, 'A'); 
+struct Stack* stackMiddle = createStack(100, 'B');
+struct Stack* stackRight = createStack(100, 'C');
   
 // Stack is full when top is equal to the last index 
 int isFull(struct Stack* stack) 
@@ -98,13 +102,7 @@ void solve(int n, struct Stack* from, struct Stack* to, struct Stack* other)
 // Driver program to test above functions 
 int main() 
 { 
-    struct Stack* stackLeft = createStack(100, 'A'); 
-    struct Stack* stackMiddle = createStack(100, 'B');
-    struct Stack* stackRight = createStack(100, 'C');
-
     int diskNum = 7;
-
-    
 
   	solve(diskNum, stackLeft, stackRight, stackMiddle);
 
